@@ -1,6 +1,12 @@
-import json         # import the Python json module
+import json
 
-with open('fake_fruit.json', 'r') as f:  # open the JSON file for reading
-    data = json.load(f)                  # de-serialise the JSON into data
+def addStrawberry():
+    with open('fake_fruit.json', 'r') as f:   
+        data = json.load(f)                   
+        data['Fruit'].append({
+            'Name': 'Strawberry',
+            'Colour': 'Red'
+            })
+    return data
 
-print(data)         # data is a python dict containing the JSON data
+print(addStrawberry())
